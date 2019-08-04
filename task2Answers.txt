@@ -1,4 +1,6 @@
 1. Used one thread to read JSON strings from the file and three threads to process JSON strings for given queries.
+
 2. Implemented BlockingQueue which limits the queue size to support large files(much greater than 1GB).
 Limiting the queue size to 100000 is utilising around 1.2GB of RAM.
+
 3. Implemented thread safe QueryResult to calculate the query results using only one scan of data.
