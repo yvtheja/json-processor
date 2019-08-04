@@ -1,0 +1,16 @@
+1.
+    Number of Cores: 4
+    Physical Memory: 4GB
+    Type of disk: Hard Disk
+    Operating System: Ubuntu 16.04 LTS
+2. Bottle necks
+    a. A single thread to read from the file is a inefficient. As a preprocess, the file can be prettified such that
+    the line count for each JSON object is fixed. Now that the line numbers of each JSON object are known, more number
+    of threads can be used to read from the file.
+
+    b. QueryResult and BlockingQueue can be lock free.
+
+    c. Parsing JSON strings to JSON objects is another bottleneck. A seperate thread pools can be created for
+    JSON parsing and query computations. This way, query computations need not wait for JSON parsing which can improve
+    the performance of the overall script.
+

@@ -12,6 +12,7 @@ private:
 public:
     void mutexCheckStar();
     void mutexCheckMinus();
+    static void printVector(std::vector<long>& vector);
     static void showq(std::queue <std::string>);
     static void keepShowingQueue(std::queue <std::string>);
     static void showJsonObject(std::string);

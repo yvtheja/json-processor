@@ -60,25 +60,31 @@ void Helper:: showJsonObject(Entity::JsonObject jsonObject) {
 //    std::cout << "\n";
 //}
 
+void Helper::printVector(std::vector<long>& vector) {
+    int size = vector.size();
+    for(int i = 0; i < size; i++){
+        std::cout << vector[i];
+        if(i + 1 < size) std::cout << ", ";
+    }
+
+    std::cout << "\n";
+}
+
 void Helper::showQueryResult(QueryResult& queryResult) {
     std::cout.precision(17);
-    std::cout << "Pocessed Objects: " << queryResult.getProcessedObjects() << "\n";
-    std::cout << "AvgCost: " << queryResult.getAvgSum()/queryResult.getProcessedObjects() << "\n";
-    std::cout << "MaxCostComponent: " << queryResult.getMaxCostComponent() << "\n";
+//    std::cout << "Pocessed Objects: " << queryResult.getProcessedObjects() << "\n";
+    std::cout << "1. " << queryResult.getAvgSum()/queryResult.getProcessedObjects() << "\n";
+    std::cout << "2. " << queryResult.getMaxCostComponent() << "\n";
 
     std::vector<long> costThresholdedIds;
     queryResult.getCostThresholdedIds(costThresholdedIds);
-    std::cout << "CostThresholded: ";
-    for (std::vector<long>::iterator it = costThresholdedIds.begin() ; it != costThresholdedIds.end(); ++it)
-        std::cout << " " << *it;
-    std::cout << "\n";
+    std::cout << "3. ";
+    Helper::printVector(costThresholdedIds);
 
     std::vector<long> costCompThresholdedIds;
     queryResult.getCostCompThresholdedIds(costCompThresholdedIds);
-    std::cout << "CostCompThresholded: ";
-    for (std::vector<long>::iterator it = costCompThresholdedIds.begin() ; it != costCompThresholdedIds.end(); ++it)
-        std::cout << " " << *it;
-    std::cout << "\n";
+    std::cout << "4. ";
+    Helper::printVector(costCompThresholdedIds);
 }
 
 void Helper::mutexCheckStar() {

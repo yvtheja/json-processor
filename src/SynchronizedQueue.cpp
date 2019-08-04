@@ -4,10 +4,8 @@
 void SynchronizedQueue::push(const std::string value) {
     {
         std::unique_lock<std::mutex> lock(sync);
-        if(qu.size() == size) {
-            std::cout << "Entered waiting" << qu.size() << "\n";
+        if(qu.size() >= size) {
             cvCanPush.wait(lock);
-            std::cout << "Waiting for Push\n";
         }
         qu.push(value);
     }

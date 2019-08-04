@@ -47,11 +47,8 @@ int main(int argc, char **argv) {
 
     time(&end);
     Helper::showQueryResult(queryResult);
-    std::cout.precision(17);
-    std::cout << "JsonReadingTime: " << jsonReadingTime << "\n";
-    std::cout << "JsonProcessingTime: " << jsonProcessingTime << "\n";
-    double totalProgramTime = double(end - start);
-    std::cout << "TotalProgramTime: " << totalProgramTime << "\n";
+//    double totalProgramTime = double(end - start);
+//    std::cout << "TotalProgramTime: " << totalProgramTime << "\n";
     return 0;
 }
 
