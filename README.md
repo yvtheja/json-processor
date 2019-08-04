@@ -1,11 +1,15 @@
 # json-processor
 
-Install Dependencies
+### Install Dependencies
 1. jsoncpp
+```
 sudo apt-get install libjsoncpp-dev
-
-Build
+```
+### Build
+```
 cmake --build cmake-build-debug --target all
-
-Run
+```
+### Run
+```
 ./cmake-build-debug/JsonObjectProcessor {fileName}
+```
