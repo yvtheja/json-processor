@@ -9,7 +9,6 @@ Json::Value JsonHelper::getJSONRoot(std::string jsonString) {
     bool parsingSuccessful = reader.parse(jsonString,root);
     if ( !parsingSuccessful )
     {
-        // report to the user the failure and their locations in the document.
         std::cerr << "Failed to parse configuration\n" << reader.getFormattedErrorMessages() << "\n" << jsonString << "\n";
         exit(1);
     }

@@ -44,22 +44,6 @@ void Helper:: showJsonObject(Entity::JsonObject jsonObject) {
     std::cout << "\n";
 }
 
-//void Helper::showQueryResult(Entity::QueryResult queryResult) {
-//    std::cout.precision(17);
-//    std::cout << "Pocessed Objects: " << queryResult.processedObjects << "\n";
-//    std::cout << "AvgCost: " << queryResult.avgSum/queryResult.processedObjects << "\n";
-//    std::cout << "MaxCostComponent: " << queryResult.maxCostComponent << "\n";
-//    std::cout << "CostThresholded: ";
-//    for (std::vector<long>::iterator it = queryResult.costThresholdedIds.begin() ; it != queryResult.costThresholdedIds.end(); ++it)
-//        std::cout << " " << *it;
-//    std::cout << "\n";
-//
-//    std::cout << "CostCompThresholded: ";
-//    for (std::vector<long>::iterator it = queryResult.costCompThresholdedIds.begin() ; it != queryResult.costCompThresholdedIds.end(); ++it)
-//        std::cout << " " << *it;
-//    std::cout << "\n";
-//}
-
 void Helper::printVector(std::vector<long>& vector) {
     int size = vector.size();
     for(int i = 0; i < size; i++){

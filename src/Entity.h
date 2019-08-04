@@ -7,14 +7,6 @@ namespace Entity {
         double cost;
         std::vector<double> costComponents;
     };
-
-//    struct QueryResult {
-//        long processedObjects = 0;
-//        double avgSum = 0;
-//        double maxCostComponent = 0;
-//        std::vector<long> costThresholdedIds;
-//        std::vector<long> costCompThresholdedIds;
-//    };
 }
 
 #endif //JSONOBJECTPROCESSOR_ENTITY_H

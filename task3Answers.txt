@@ -16,4 +16,4 @@
 
     d. The program is CPU-intensive. For testing, only two threads, 1st for reading file and 2nd for processing JSONs
     were created. The 1st thread spent 55sec, only for reading the file and the 2nd thread spent 95sec(only in parsing
-    JSON strings and query calculations). The functions that spent longest time are JsonHelper::getJsonObject and getNextJson.
+    JSON strings and query calculations). The functions that spent longest time are JsonHelper::getJsonObject and readJsonStrings.

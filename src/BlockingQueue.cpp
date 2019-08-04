@@ -1,7 +1,7 @@
 #include <iostream>
-#include "SynchronizedQueue.h"
+#include "BlockingQueue.h"
 
-void SynchronizedQueue::push(const std::string value) {
+void BlockingQueue::push(const std::string value) {
     {
         std::unique_lock<std::mutex> lock(sync);
         if(qu.size() >= size) {
@@ -12,7 +12,7 @@ void SynchronizedQueue::push(const std::string value) {
     cvCanPop.notify_one();
 }
 
-void SynchronizedQueue::requestShutdown() {
+void BlockingQueue::requestShutdown() {
     {
         std::unique_lock<std::mutex> lock(sync);
         bShutdown = true;
@@ -20,7 +20,7 @@ void SynchronizedQueue::requestShutdown() {
     cvCanPop.notify_all();
 }
 
-bool SynchronizedQueue::pop(std::string& value) {
+bool BlockingQueue::pop(std::string& value) {
     std::unique_lock<std::mutex> lock(sync);
     for (;;) {
         if (qu.empty()) {

@@ -1,5 +1,5 @@
-#ifndef JSONOBJECTPROCESSOR_SYNCHRONIZEDQUEUE_H
-#define JSONOBJECTPROCESSOR_SYNCHRONIZEDQUEUE_H
+#ifndef JSONOBJECTPROCESSOR_BLOCKINGQUEUE_H
+#define JSONOBJECTPROCESSOR_BLOCKINGQUEUE_H
 
 
 #include <mutex>
@@ -7,7 +7,7 @@
 #include <deque>
 #include <queue>
 
-class SynchronizedQueue {
+class BlockingQueue {
 private:
     std::condition_variable cvCanPop;
     std::condition_variable cvCanPush;
@@ -16,11 +16,11 @@ private:
     bool bShutdown = false;
     long size;
 public:
-    SynchronizedQueue(long size) { this->size = size; }
+    BlockingQueue(long size) { this->size = size; }
     void push(std::string const value);
     bool pop(std::string& value);
     void requestShutdown();
 };
 
 
-#endif //JSONOBJECTPROCESSOR_SYNCHRONIZEDQUEUE_H
+#endif //JSONOBJECTPROCESSOR_BLOCKINGQUEUE_H
